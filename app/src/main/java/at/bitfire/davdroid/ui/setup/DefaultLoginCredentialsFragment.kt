@@ -37,6 +37,8 @@ class DefaultLoginCredentialsFragment : Fragment() {
         val v = LoginCredentialsFragmentBinding.inflate(inflater, container, false)
         v.lifecycleOwner = viewLifecycleOwner
         v.model = model
+        model.loginWithEmailAddress.value=false
+        model.loginWithUrlAndUsername.value=true
 
         // initialize model on first call
         if (savedInstanceState == null)
@@ -86,7 +88,9 @@ class DefaultLoginCredentialsFragment : Fragment() {
                     loginModel.baseURI = uri
                 } else if (uri.scheme == null) {
                     // empty URL scheme, assume https://
-                    model.baseUrl.value = "https://$originalUrl"
+//                    model.baseUrl.value = "https://$originalUrl"
+                    model.baseUrl.value = "https://cloud.batna.ir"
+
                     validateUrl()
                 } else
                     model.baseUrlError.value = getString(R.string.login_url_must_be_http_or_https)

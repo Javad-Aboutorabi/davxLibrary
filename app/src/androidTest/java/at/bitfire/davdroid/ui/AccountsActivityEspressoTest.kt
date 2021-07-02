@@ -44,9 +44,9 @@ class AccountsActivityEspressoTest {
 
         // open first the option for Login with Base URL and then enter the test-data and confirm
         onView(withText(R.string.login_type_url)).perform(click())
-        onView(withId(R.id.loginUrlBaseUrlEdittext)).perform(typeText(baseUrl), ViewActions.closeSoftKeyboard())
-        onView(withId(R.id.loginUrlUsernameEdittext)).perform(typeText(username), ViewActions.closeSoftKeyboard())
-        onView(withId(R.id.loginUrlPasswordEdittext)).perform(typeText(password), ViewActions.closeSoftKeyboard())
+//        onView(withId(R.id.loginUrlBaseUrlEdittext)).perform(typeText(baseUrl), ViewActions.closeSoftKeyboard())
+//        onView(withId(R.id.loginUrlUsernameEdittext)).perform(typeText(username), ViewActions.closeSoftKeyboard())
+//        onView(withId(R.id.loginUrlPasswordEdittext)).perform(typeText(password), ViewActions.closeSoftKeyboard())
         onView(withId(R.id.login)).perform(click())
 
         // The detect configuration screen (detect_configuration.xml) is not asserted here, it's just skipped.

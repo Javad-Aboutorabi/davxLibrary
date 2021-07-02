@@ -21,6 +21,8 @@ buildscript {
     ]
 
     repositories {
+        maven { url "https://dl.google.com/android/maven2/"}
+
         google()
         mavenCentral()
 
@@ -40,6 +42,8 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url "https://dl.google.com/android/maven2/"}
+
         google()
         mavenCentral()
         maven { url 'https://dl.bintray.com/google/flexbox-layout/' }

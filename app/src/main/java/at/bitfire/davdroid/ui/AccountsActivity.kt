@@ -65,9 +65,27 @@ class AccountsActivity: AppCompatActivity(), NavigationView.OnNavigationItemSele
 
         val content = binding.content
         setSupportActionBar(binding.content.toolbar)
-        content.fab.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+//        content.fab.setOnClickListener {
+        var accounts = AccountManager.get(this).accounts
+        var existAccount =false
+        for (account in accounts) {
+            if(account.type.contains("bitfire.at.davdroid")) {
+                existAccount=true
+                break
+            }
         }
+        if (!existAccount){
+            startActivity(Intent(this, LoginActivity::class.java))
+            content.fab.show()
+        }else {
+
+            content.fab.setOnClickListener {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+            content.fab.show()
+        }
+
+//        }
         content.fab.show()
 
         val toggle = ActionBarDrawerToggle(

@@ -78,7 +78,7 @@ class AccountDetailsFragment : Fragment() {
             v.accountName.setAdapter(accountNameAdapter)
         }
 
-        v.createAccount.setOnClickListener {
+//        v.createAccount.setOnClickListener {
             val name = model.name.value
             if (name.isNullOrBlank())
                 model.nameError.value = getString(R.string.login_account_name_required)
@@ -87,7 +87,7 @@ class AccountDetailsFragment : Fragment() {
                 val am = AccountManager.get(requireActivity())
                 if (am.getAccountsByType(getString(R.string.account_type)).any { it.name == name }) {
                     model.nameError.value = getString(R.string.login_account_name_already_taken)
-                    return@setOnClickListener
+
                 }
 
                 val idx = v.contactGroupMethod.selectedItemPosition
@@ -118,7 +118,7 @@ class AccountDetailsFragment : Fragment() {
                     }
                 })
             }
-        }
+//        }
 
         val forcedGroupMethod = settings.getString(AccountSettings.KEY_CONTACT_GROUP_METHOD)?.let { GroupMethod.valueOf(it) }
         if (forcedGroupMethod != null) {
