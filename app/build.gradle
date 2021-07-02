@@ -6,7 +6,7 @@
  * http://www.gnu.org/licenses/gpl.html
  */
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -17,7 +17,7 @@ android {
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        applicationId "at.bitfire.davdroid"
+
 
         versionCode 303120000
         buildConfigField "long", "buildTime", System.currentTimeMillis() + "L"
